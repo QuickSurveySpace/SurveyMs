@@ -108,8 +108,8 @@ layui.use(requireModules, function(layer,element,util,authority,login,laytpl,aja
     // 监听顶部右侧导航
     element.on('nav(side-right)', function(elem) {
         // 修改skin
-        if ($(this).attr('data-skin')) {
-            localStorage.skin = $(this).attr('data-skin');
+        if ($(this).parent().attr('data-skin')) {
+            localStorage.skin = $(this).parent().attr('data-skin');
             skin();
         } else {
             // 添加tab方法
@@ -122,6 +122,28 @@ layui.use(requireModules, function(layer,element,util,authority,login,laytpl,aja
     $('#clearCache').on('click', function() {
         toast.smile("如有系统升级，可通过快捷键Ctrl+Shift+Delete清除浏览器缓存，只需清理缓存的图片和文件。");
     });
+
+    $('#fullScreen').on('click', function() {
+        var docElm = document.documentElement;
+        //W3C
+        if(docElm.requestFullscreen) {
+            docElm.requestFullscreen();
+        }
+        //FireFox
+        else if(docElm.mozRequestFullScreen) {
+            docElm.mozRequestFullScreen();
+        }
+        //Chrome等
+        else if(docElm.webkitRequestFullScreen) {
+            docElm.webkitRequestFullScreen();
+        }
+        //IE11
+        else if(elem.msRequestFullscreen) {
+            elem.msRequestFullscreen();
+        }
+        toast.msg('按Esc即可退出全屏');
+    });
+
 
     if (window.sessionStorage.getItem("locksys") == "true") {
         lockPage();

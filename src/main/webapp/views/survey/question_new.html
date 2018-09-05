@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>问卷</title>
+    <link rel="stylesheet" href="../../frame/layui/css/layui.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/search.css">
+    <link rel="stylesheet" href="../../css/question/common.css">
+    <link rel="stylesheet" href="../../css/question/bootstrap.css">
+    <link rel="icon" href="../image/code.png">
+    <link rel="stylesheet" href="../../frame/ali_font/iconfont.css">
+
+    <script src="../../frame/ali_font/iconfont.js"></script>
+
+    <style>
+        .main{
+            position: relative;
+            box-sizing: border-box;
+            padding: 1px 0 0;
+            min-width: 1130px;
+        }
+        .question_type_wrap{
+            width: 233px;
+            height: 100%;
+            overflow: auto;
+            background-color: #fafafa;
+            position: fixed;
+            top: 5px;
+            left: 5px;
+            z-index: 2;
+            border-right: 1px solid #dde5ed;
+        }
+        .question_type_wrap .question_type_dl{
+            /* width: 236px; */
+            margin: 0 0px 20px 12px;
+            padding-bottom: 20px;
+        }
+        .question_type_wrap .type_module{
+            padding: 2px 0 0;
+        }
+        .question_type_wrap .type_module:nth-child(1)>dt{
+            margin-top:24px;
+        }
+        .question_type_wrap .type_module>dt{
+            color: #4a4a4a;
+            font-size: 14px;
+            margin-top:6px;
+        }
+        .question_type_wrap .type_module>dd{
+            margin: 6px 0 0;
+            font-size: 0;
+        }
+
+    </style>
+
+    <script>
+        var dataIncome = [
+            {
+                'val': 1,
+                'txt': '2000以下'
+            }, {
+                'val': 2,
+                'txt': '2000-5000'
+            }, {
+                'val': 3,
+                'txt': '5001-8000'
+            }, {
+                'val': 4,
+                'txt': '8001-10000'
+            }, {
+                'val': 5,
+                'txt': '10000以上'
+            }
+        ];
+
+        var dataSex = [
+            {
+                'val': 1,
+                'txt': '男'
+            }, {
+                'val': 2,
+                'txt': '女'
+            }
+        ];
+    </script>
+</head>
+
+<body class="body">
+
+
+<div class="main">
+
+    <div class="question_type_wrap" style="overflow: hidden; height: 585px;">
+        <div class="question_type_dl" style="top: 0px; position: absolute;">
+            <dl class="type_module">
+                <dt>题目类型</dt>
+                <dd>
+                    <div class="layui-btn-container">
+                        <button class="layui-btn layui-btn-primary" data-role="single-type" data-title="单选题" onclick="addQuestion(this,'single-type',true,1)"><i class="iconfont icon-danxuan"></i>单选题</button>
+                        <button class="layui-btn layui-btn-primary" data-role="checkbox-type" data-title="多选题" onclick="addQuestion(this,'checkbox-type',true,1)"><i class="iconfont icon-duoxuan"></i>多选题</button>
+                    </div>
+                    <div class="layui-btn-container">
+                        <button class="layui-btn layui-btn-primary" data-role="text-type" data-title="单行填空题" onclick="addQuestion(this,'text-type',true,2)"><i class="iconfont icon-bianji"></i>填空题</button>
+                    </div>
+                </dd>
+            </dl>
+
+            <dl class="type_module">
+                <dt>个人信息</dt>
+                <dd>
+                    <div class="layui-btn-container">
+                        <button class="layui-btn layui-btn-primary" data-title="您的收入？" onclick="addQuestion(this,'select-type',true,2,dataIncome)"><i class="iconfont icon-xingming"></i>收入</button>
+                        <button class="layui-btn layui-btn-primary" data-title="您的手机号是？" onclick="addQuestion(this,'text-type',true,2)"><i class="iconfont icon-zujian-shoujihao"></i>手机</button>
+                    </div>
+                    <div class="layui-btn-container">
+                        <button class="layui-btn layui-btn-primary" data-title="您的邮箱是？" onclick="addQuestion(this,'text-type',true,2)"><i class="iconfont icon-youxiang"></i>邮箱</button>
+                        <button class="layui-btn layui-btn-primary" data-title="您的性别？" onclick="addQuestion(this,'select-type',true,2,dataSex)"><i class="iconfont icon-xingbie"></i>性别</button>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="edit-content">
+        <div class="edit-con-title edit-bor" contenteditable="true" onclick="editDiv(event,this,0)">这是一份问卷调查</div>
+        <div class="edit-con-sum edit-bor">
+            <div class="edit-box" contenteditable="true" onclick="editDiv(event,this,1)">
+                为了给您提供更好的服务，希望您能抽出几分钟时间，将您的感受和建议告诉我们，我们非常重视每位用户的宝贵意见，期待您的参与！现在我们就马上开始吧！
+            </div>
+        </div>
+
+        <div class="edit-con" id="editArea">
+
+
+    </div>
+
+        <div class="edit-botton edit-bor">
+            <div class="page-line-area">
+                页码:1/1
+            </div>
+            <a role="button" class="btn btn-info" href="preview-survey.html?tab=2" target="_blank">预览问卷</a>
+            <button type="button" class="btn btn-primary" onclick="saveSurvey()">保存问卷</button>
+        </div>
+    </div>
+
+
+</div>
+
+<script type="text/javascript" src="../../js/common/module-manage.js"></script>
+<script type="text/javascript" src="../../frame/layui/layui.js"></script>
+<script type="text/javascript" charset="utf8" src="../../frame/jquery-1.12.4.js"></script>
+<script type="text/javascript" charset="utf8" src="../../frame/moment.js"></script>
+<script type="text/javascript" charset="utf8" src="../../frame/form-srializeJSON.js"></script>
+<script type="text/javascript" charset="utf8" src="../../js/question/jquery.ui.js"></script>
+<script type="text/javascript" charset="utf8" src='../../js/question/jquery.editor.js'></script>
+</body>
+
+</html>
