@@ -1,6 +1,6 @@
 package com.youguu.base;
 
-import com.viewol.sys.base.ContextLoader;
+import com.survey.sys.base.ContextLoader;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.springframework.context.ApplicationContext;
