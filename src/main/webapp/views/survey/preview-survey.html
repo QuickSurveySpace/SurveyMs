@@ -6,11 +6,6 @@
     <title>问卷调查-预览问卷</title>
     <link rel="stylesheet" href="../../css/question/common.css">
     <link rel="stylesheet" href="../../css/question/bootstrap.css">
-
-    <script type="text/javascript" charset="utf8" src="../../frame/jquery-1.12.4.js"></script>
-    <script type="text/javascript" charset="utf8" src="../../frame/form-srializeJSON.js"></script>
-    <script type="text/javascript" charset="utf8" src="../../js/question/jquery.ui.js"></script>
-    <script type="text/javascript" charset="utf8" src="../../js/question/bootstrap.js"></script>
 </head>
 <body>
 <div class="wapper">
@@ -33,17 +28,25 @@
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="phone">
                         <div class="phone-bg">
-                            <iframe src="view-survey.html" id="preview_mobile_iframe" borderwidth='0' frameborder='0'></iframe>
+                            <iframe src="view-survey.html?rand=sssssssss" id="preview_mobile_iframe" borderwidth='0' frameborder='0'></iframe>
                         </div>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="web">
-                        <iframe src="view-survey.html" width="100%" height="500" borderwidth='0' frameborder='0'></iframe>
+                        <iframe src="view-survey.html?rand=1111111" width="100%" height="500" borderwidth='0' frameborder='0'></iframe>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script type="text/javascript" src="../../js/common/module-manage.js"></script>
+<script type="text/javascript" src="../../frame/layui/layui.js"></script>
+<script type="text/javascript" charset="utf8" src="../../frame/jquery-1.12.4.js"></script>
+<script type="text/javascript" charset="utf8" src="../../frame/moment.js"></script>
+<script type="text/javascript" charset="utf8" src="../../frame/form-srializeJSON.js"></script>
+<script type="text/javascript" charset="utf8" src="../../js/question/jquery.ui.js"></script>
+<script type="text/javascript" charset="utf8" src="../../js/question/bootstrap.js"></script>
 <script>
     $(function () {
         function GetQueryString(name) {

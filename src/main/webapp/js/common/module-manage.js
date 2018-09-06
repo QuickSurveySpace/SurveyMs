@@ -56,7 +56,8 @@ function registeModule(window,modulesYouWanted,otherModules) {
 			'login-api':'api/login-api',
 			'role&authority-api':'api/role&authority-api',
 			'user-api':'api/user-api',
-			'select-api':'api/select-api'
+			'select-api':'api/select-api',
+			'question-new-api':'api/question-new-api'
 		}
 
 		//刨除系统自带modules
