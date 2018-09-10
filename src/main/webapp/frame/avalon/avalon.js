@@ -3696,7 +3696,7 @@ https://github.com/RubyLouvre/avalon/tree/2.2.9
             targetStack.push(preAction);
         }
         avalon.trackingAction = action;
-        avalon.track('【action】', action.type, action.expr, '开始征收依赖项');
+        avalon.track('【controller】', action.type, action.expr, '开始征收依赖项');
         //多个observe持有同一个action
         action.mapIDs = {}; //重新收集依赖
         var hasError = true,
@@ -4026,7 +4026,7 @@ https://github.com/RubyLouvre/avalon/tree/2.2.9
 
         // get --> getValue --> getter
         get: function get(fn) {
-            var name = 'action track ' + this.type;
+            var name = 'controller track ' + this.type;
 
             if (this.deep) {
                 avalon.deepCollect = true;
@@ -5135,7 +5135,7 @@ https://github.com/RubyLouvre/avalon/tree/2.2.9
                 var finalOption = {};
                 var action = actionMaps[option.action];
                 if (typeof Effect.prototype[action] !== 'function') {
-                    avalon.warn('action is undefined');
+                    avalon.warn('controller is undefined');
                     return;
                 }
                 //必须预定义特效
@@ -5392,7 +5392,7 @@ https://github.com/RubyLouvre/avalon/tree/2.2.9
         <body>
             <div :controller='ani' >
                 <p><input type='button' value='click' :click='@a =!@a'></p>
-                <div :effect="{is:'animate',action:@a}"></div>
+                <div :effect="{is:'animate',controller:@a}"></div>
             </div>
     </body>
     </html>

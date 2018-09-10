@@ -48,8 +48,10 @@ layui.use(requireModules, function (
         alert("提交问卷,待开发......");
     })
 
+    var param = request.getAllUrlParam();
+
     request.request(questionNewApi.getUrl('getQuestion'), {
-        id: 1324
+        id: param.surveyId
     }, function(result) {
         if(result.status == true) {
             //问卷JSON数据

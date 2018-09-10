@@ -11,33 +11,24 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/search.css">
     <link rel="icon" href="../image/code.png">
+    <style>
+        .layui-table {
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body class="body">
 
 <div class="condition">
     <form id="condition" class="layui-form layui-form-pane" action="">
-
         <div class="layui-form-item">
-
             <div class="layui-inline">
-                <label class="layui-form-label">用户ID</label>
+                <label class="layui-form-label">问卷名称</label>
 
                 <div class="layui-input-inline">
-                    <input type="text" name="userId" lay-verify="required" placeholder="请输入" autocomplete="off"
-                           class="layui-input">
+                    <input type="text" name="surveyTitle" placeholder="请输入" autocomplete="off" class="layui-input">
                 </div>
-
-            </div>
-
-            <div class="layui-inline">
-                <label class="layui-form-label">真实姓名</label>
-
-                <div class="layui-input-inline">
-                    <input type="text" name="realName" lay-verify="required" placeholder="请输入" autocomplete="off"
-                           class="layui-input" style="width: 200px">
-                </div>
-
             </div>
 
             <div class="layui-inline fr">
@@ -46,16 +37,11 @@
                     查询
                 </button>
             </div>
-
         </div>
-
     </form>
 </div>
 
-<div id="page-btns" class="layui-btn-group fl">
-</div>
-
-<table id="user-list" class="layui-table" lay-filter="test">
+<table id="question-list" class="layui-table" lay-filter="test">
 
 </table>
 
@@ -68,7 +54,7 @@
 <script type="text/javascript" charset="utf8" src="../../frame/jquery-1.12.4.js"></script>
 <script type="text/javascript" charset="utf8" src="../../frame/moment.js"></script>
 <script type="text/javascript" charset="utf8" src="../../frame/form-srializeJSON.js"></script>
-<script type="text/javascript" charset="utf8" src="../../js/controller/user/user-list.js"></script>
+<script type="text/javascript" charset="utf8" src="../../js/controller/question/question-list.js"></script>
 </body>
 
 </html>

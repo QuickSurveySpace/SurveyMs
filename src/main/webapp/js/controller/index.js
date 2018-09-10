@@ -206,9 +206,12 @@ layui.use(requireModules, function(layer,element,util,authority,login,laytpl,aja
         });
     };
 
+    function childAddTab(url) {
+        alert(url);
+    }
     // 添加TAB选项卡
     function addTab(element, elem) {
-        console.log(elem);
+        // console.log(elem);
         var card = 'card'; // 选项卡对象
         var title = elem.html(); // 导航栏text
         var src = elem.attr('href-url'); // 导航栏跳转URL

@@ -38,6 +38,22 @@ layui.use(requireModules, function (
     var $ = layui.jquery;
     var toast = layui.toast;
 
+    //问卷ID，修改问卷时走下面流程
+    var param = request.getAllUrlParam();
+
+    request.request(questionNewApi.getUrl('getQuestion'), {
+        id: param.surveyId
+    }, function(result) {
+        if(result.status == true) {
+            //问卷JSON数据
+            var survey = JSON.parse(result.data);
+            alert(survey.surveyName);
+        }
+    });
+
+    var surveyId = GetQueryString('surveyId');
+    alert(surveyId);
+
     //屏幕滚动，左侧栏常驻
     $(window).scroll(function () {
         if ($(document).scrollTop() >= 150) {
@@ -116,11 +132,11 @@ layui.use(requireModules, function (
             }
 
         });
-    })
+    });
+
+
+
 });
-
-
-
 
 
 
@@ -148,9 +164,7 @@ function addQuestion(e, dataType, titletype, icontype, data, parent) {
                     }
                 ]
             }
-            var dataNow = data
-                ? data
-                : dataDefault;
+            var dataNow = data ? data : dataDefault;
             html += '<ul class="ques-list">'
             if (dataNow) {
                 for (var j = 0; j < dataNow.length; j++) {
@@ -207,9 +221,7 @@ function addQuestion(e, dataType, titletype, icontype, data, parent) {
                     }
                 ]
             }
-            var dataNow = data
-                ? data
-                : dataDefault;
+            var dataNow = data ? data : dataDefault;
             html += '<div class="edit-seclect-div">'
             html += '<select class="form-control select-list" name="selecttype">'
             if (dataNow) {
@@ -256,9 +268,8 @@ function addQuestion(e, dataType, titletype, icontype, data, parent) {
                 ],
                 'number': 10
             }
-            var dataNow = data
-                ? data
-                : dataDefault;
+            var dataNow = data ? data : dataDefault;
+
             html += '<div class="form-inline">'
             html += '  <input type="number" class="form-control mr10 f12" min="1" max="" name="linetxt" value="' + dataNow.number + '">'
             html += ' <select class="form-control mr10 select f12" name="lineselect" onchange="selectCustom(this)">'

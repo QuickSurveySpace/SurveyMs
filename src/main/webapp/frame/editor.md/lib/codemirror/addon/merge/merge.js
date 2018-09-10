@@ -139,7 +139,7 @@
     var editor, other, now = +new Date;
     if (type == DIFF_INSERT) { editor = dv.edit; other = dv.orig; }
     else { editor = dv.orig; other = dv.edit; }
-    // Don't take action if the position of this editor was recently set
+    // Don't take controller if the position of this editor was recently set
     // (to prevent feedback loops)
     if (editor.state.scrollSetBy == dv && (editor.state.scrollSetAt || 0) + 50 > now) return false;
 
