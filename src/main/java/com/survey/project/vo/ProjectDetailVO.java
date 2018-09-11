@@ -1,8 +1,11 @@
-package com.survey.investigate.vo;
+package com.survey.project.vo;
 
 import java.util.Date;
 
-public class InvestigateVO {
+/**
+ * 调查明细
+ */
+public class ProjectDetailVO {
     private int id;
     private String companyName;//公司名称
     private String regionName;//客户区域

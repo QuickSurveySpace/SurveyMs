@@ -1,7 +1,7 @@
-package com.survey.investigate.controller;
+package com.survey.project.controller;
 
 import com.survey.common.GridBaseResponse;
-import com.survey.investigate.vo.InvestigateVO;
+import com.survey.project.vo.ProjectDetailVO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,12 +13,22 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
-@RequestMapping("investigate")
-public class InvestigateController {
+@RequestMapping("projectDetail")
+public class ProjectDetailController {
 
-    @RequestMapping(value = "/investigateList", method = RequestMethod.POST)
+    /**
+     * 项目调查明细列表
+     * @param companyId
+     * @param regionId
+     * @param netName
+     * @param status
+     * @param page
+     * @param limit
+     * @return
+     */
+    @RequestMapping(value = "/projectDetailList", method = RequestMethod.POST)
     @ResponseBody
-    public GridBaseResponse investigateList(@RequestParam(value = "companyId", defaultValue = "0") int companyId,
+    public GridBaseResponse projectDetailList(@RequestParam(value = "companyId", defaultValue = "0") int companyId,
                                             @RequestParam(value = "regionId", defaultValue = "0") int regionId,
                                             @RequestParam(value = "netName", defaultValue = "") String netName,
                                             @RequestParam(value = "status", defaultValue = "0") int status,
@@ -35,8 +45,8 @@ public class InvestigateController {
 //            rs.setData(pageHolder.getList());
 //        }
 
-        List<InvestigateVO> list = new ArrayList<>();
-        InvestigateVO vo = new InvestigateVO();
+        List<ProjectDetailVO> list = new ArrayList<>();
+        ProjectDetailVO vo = new ProjectDetailVO();
         vo.setId(1);
         vo.setCompanyName("阿里巴巴");
         vo.setRegionName("华北");

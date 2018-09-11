@@ -11,7 +11,7 @@ var requireModules = [
     'layer',
     'request',
     'form-util',
-    'investigate-api',
+    'project-detail-api',
     'table-util',
     'btns',
     'authority',
@@ -31,7 +31,7 @@ layui.use(requireModules, function (
     layer,
     request,
     formUtil,
-    investigateApi,
+    projectDetailApi,
     tableUtil,
     btns,
     authority,
@@ -67,16 +67,16 @@ layui.use(requireModules, function (
         },
         renderTable: function () {
             return $table.render({
-                elem: '#investigate-list'
+                elem: '#project-detail-list'
                 , height: 'full-100'
-                , url: investigateApi.getUrl('investigateList').url
+                , url: projectDetailApi.getUrl('projectDetailList').url
                 , method: 'post'
                 , page: true
                 , limits: [10, 50, 100, 200]
                 , cols: [[
                     {type: 'numbers'},
                     {field: 'id', title: '调查ID', width: 80},
-                    {field: 'companyName', title: '公司名称', width: 120},
+                    {field: 'companyName', title: '公司名称', width: 250},
                     {field: 'regionName', title: '区域名称', width: 120},
                     {field: 'netName', title: '网点名称', width: 120},
                     {field: 'score', title: '得分', width: 100},
@@ -92,7 +92,7 @@ layui.use(requireModules, function (
                     {field: 'createTime', title: '创建时间', width: 160, templet: function (d) {
                         return moment(d.createTime).format("YYYY-MM-DD HH:mm:ss");
                     }},
-                    {fixed: 'right', width: 180, align: 'center', toolbar: '#barDemo'}
+                    {fixed: 'right', width: 80, align: 'center', toolbar: '#barDemo'}
                 ]]
             });
         },

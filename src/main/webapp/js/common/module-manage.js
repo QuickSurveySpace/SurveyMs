@@ -60,7 +60,8 @@ function registeModule(window, modulesYouWanted, otherModules) {
             'company-api': 'api/company-api',
             'net-api': 'api/net-api',
             'region-api': 'api/region-api',
-            'investigate-api': 'api/investigate-api'
+            'project-api': 'api/project-api',
+            'project-detail-api': 'api/project-detail-api'
         }
 
         //刨除系统自带modules

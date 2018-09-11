@@ -51,6 +51,16 @@ layui.define(function(exports) {
             icon: '&#xe605;',
             name: '提审'
         },
+        'batchReview': {
+            className: baseBtnClass + 'layui-btn batchReview',
+            icon: '&#xe605;',
+            name: '批量审核'
+        },
+        'batchImport': {
+            className: baseBtnClass + 'layui-btn batchImport',
+            icon: '&#xe642;',
+            name: '批量导入'
+        },
         'row-edit': {
             className: baseBtnClass + 'layui-btn-small layui-btn-warm row-edit',
             icon: '&#xe642;',
@@ -119,23 +129,11 @@ layui.define(function(exports) {
             name: '查看',
             event: 'row-view'
         },
-        'row-reco-layui': {
-            className: baseBtnClass + 'layui-btn-xs',
-            icon: '&#xe642;',
-            name: '推荐',
-            event: 'row-reco'
-        },
         'row-review-layui': {
             className: baseBtnClass + 'layui-btn-xs',
             icon: '&#xe605;',
             name: '审核',
             event: 'row-review'
-        },
-        'row-cancel-reco-layui': {
-            className: baseBtnClass + 'layui-btn-xs',
-            icon: '&#xe642;',
-            name: '取消推荐',
-            event: 'row-cancel-reco'
         },
         'row-freeze-layui':{
             className: baseBtnClass + 'layui-btn-xs',
@@ -148,30 +146,6 @@ layui.define(function(exports) {
             icon: '&#xe615;',
             name: '恢复',
             event: 'row-unfreeze'
-        },
-        'row-home-reco-layui': {
-            className: baseBtnClass + 'layui-btn-xs',
-            icon: '&#xe642;',
-            name: '首页推荐',
-            event: 'row-home-reco'
-        },
-        'row-same-reco-layui': {
-            className: baseBtnClass + 'layui-btn-xs',
-            icon: '&#xe642;',
-            name: '同类推荐',
-            event: 'row-same-reco'
-        },
-        'row-cancel-home-reco-layui': {
-            className: baseBtnClass + 'layui-btn-xs',
-            icon: '&#xe642;',
-            name: '取消首页推荐',
-            event: 'row-cancel-home-reco'
-        },
-        'row-cancel-same-reco-layui': {
-            className: baseBtnClass + 'layui-btn-xs',
-            icon: '&#xe642;',
-            name: '取消同类推荐',
-            event: 'row-cancel-same-reco'
         },
         'row-up-layui': {
             className: baseBtnClass + 'layui-btn-xs',
@@ -202,6 +176,12 @@ layui.define(function(exports) {
             icon: '&#xe642;',
             name: '查看数据',
             event: 'row-view-detail'
+        },
+        'row-import-data-layui': {
+            className: baseBtnClass + 'layui-btn-xs',
+            icon: '&#xe642;',
+            name: '导入数据',
+            event: 'row-import-data'
         }
     };
 
